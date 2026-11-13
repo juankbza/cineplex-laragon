@@ -1,0 +1,87 @@
+
+:root {
+  --bg-main: #0c0c11;          /* Fondo base morado oscuro */
+  --bg-card: #15151c;          /* Tarjetas y contenedores */
+  --bg-input: #1c1c24;         /* Botones y campos secundarios */
+  
+  --primary-purple: #6d28d9;   /* Morado principal CinePleX */
+  --primary-hover: #5b21b6;    /* Morado hover */
+  --primary-light: #8b5cf6;    /* Morado claro para acentos */
+  
+  --accent-cyan: #06b6d4;
+  --accent-red: #ef4444;
+  
+  --text-white: #ffffff;
+  --text-muted: #94a3b8;
+  --border-color: #262633;
+  
+  --nav-bg: rgba(12, 12, 17, 0.94);
+  --shadow-color: rgba(0, 0, 0, 0.45);
+
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+/* 2. MODO CLARO (FONDO BLANCO Y ACCESORIOS CUIDADOS) */
+[data-theme="light"] {
+  --bg-main: #f8fafc;          /* Fondo principal blanco / gris suave */
+  --bg-card: #ffffff;          /* Tarjetas en blanco puro */
+  --bg-input: #f1f5f9;         /* Campos y botones secundarios claros */
+  
+  --primary-purple: #6d28d9;   /* Mantiene el morado característico */
+  --primary-hover: #6b21a8;    
+  --primary-light: #7e22ce;    
+  
+  --accent-cyan: #0284c7;
+  --accent-red: #dc2626;
+  
+  --text-white: #0f172a;       /* Texto principal oscuro para la web */
+  --text-muted: #64748b;       /* Texto secundario gris */
+  --border-color: #e2e8f0;     /* Bordes suaves */
+  
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --shadow-color: rgba(126, 34, 206, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Espacio superior para que el navbar fijo de 80px no tape los títulos ni posters al deslizar */
+section[id], div[id] {
+  scroll-margin-top: 100px;
+}
+
+body {
+  background-color: var(--bg-main);
+  background-image: none;
+  color: var(--text-white);
+  font-family: var(--font-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 80px; /* Espacio exacto para que el navbar fijo no tape el contenido */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-purple);
+}
